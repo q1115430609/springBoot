@@ -9,4 +9,5 @@ import java.util.Map;
 public interface QuestionMapper {
     List<Map<String,Object>> getQuestionList();
     void addQuestion(Map<String,Object> map);
+    int getQuestionMaxNo();
 }

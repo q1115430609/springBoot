@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.AnswerMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.springboot.entity.Answer">
+        <result column="answerId" jdbcType="VARCHAR" property="answerId" />
+        <result column="questionId" jdbcType="VARCHAR" property="questionId" />
+        <result column="answerContent" jdbcType="VARCHAR" property="answerContent" />
+    </resultMap>
+
+    <select id="getAnswerList" resultType="map">
+        select * from answer where questionId = #{questionId} order by rank
+    </select>
+
+    <insert id="addAnswer">
+        insert into answer values
+        <foreach collection ="list" item="map" separator =",">
+            (#{map.answerId}, #{map.questionId},#{map.rank}, #{map.answerContent})
+        </foreach >
+    </insert>
+
+</mapper>

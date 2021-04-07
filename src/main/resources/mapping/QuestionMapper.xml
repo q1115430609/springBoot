@@ -10,10 +10,15 @@
         <result column="questionAnswerDescribe" jdbcType="VARCHAR" property="questionAnswerDescribe" />
     </resultMap>
 
-    <select id="getQuestionList" resultType="com.example.springboot.entity.Question">
+    <select id="getQuestionList" resultType="map">
         select * from question
     </select>
+
+    <select id="getQuestionMaxNo" resultType="java.lang.Integer">
+        select ifnull(max(questionNo),0) as questionId from question
+    </select>
+
     <insert id="addQuestion">
-        insert into question VALUES(#{questionId},#{},"RAMSD描述","1","saddadadsad");
+        insert into question VALUES(#{questionId},#{questionNo},#{questionName},#{questionCorrectAnswer},#{questionAnswerDescribe});
     </insert>
 </mapper>

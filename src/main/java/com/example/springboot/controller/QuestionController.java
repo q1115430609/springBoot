@@ -19,7 +19,7 @@ public class QuestionController {
     public QuestionService questionService;
 
     @RequestMapping("getQuestionList")
-    public List<Map<String,Object>> getQuestionList(@RequestBody HashMap<String,Object> map){
+    public List<Map<String,Object>> getQuestionList(){
         List<Map<String,Object>> list = questionService.getQuestionList();
 
         return list;
