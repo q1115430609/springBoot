@@ -13,5 +13,7 @@
     <select id="getQuestionList" resultType="com.example.springboot.entity.Question">
         select * from question
     </select>
-
+    <insert id="addQuestion">
+        insert into question VALUES(#{questionId},#{},"RAMSD描述","1","saddadadsad");
+    </insert>
 </mapper>

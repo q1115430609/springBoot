@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -18,9 +19,16 @@ public class QuestionController {
     public QuestionService questionService;
 
     @RequestMapping("getQuestionList")
-    public Map<String,Object> getQuestionList(@RequestBody HashMap<String,Object> map){
-        Map<String,Object> mapa = questionService.getQuestionList();
+    public List<Map<String,Object>> getQuestionList(@RequestBody HashMap<String,Object> map){
+        List<Map<String,Object>> list = questionService.getQuestionList();
 
-        return mapa;
+        return list;
     }
+
+    @RequestMapping("addQuestion")
+    public Map<String,Object> addQuestion(@RequestBody HashMap<String,Object> map){
+        Map<String,Object> map1 = questionService.addQuestion(map);
+        return map1;
+    }
+
 }
