@@ -23,4 +23,9 @@ public class LoginController {
         System.out.println(user);
         return user.getRealName();
     }
+
+    @RequestMapping("testGetMethod")
+    public String testGetMethod(HashMap<String,Object> map){
+        return "Hello World";
+    }
 }
