@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.PiggyBankMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.springboot.entity.PiggyBank">
+        <result column="id" jdbcType="VARCHAR" property="id" />
+        <result column="userId" jdbcType="VARCHAR" property="userId" />
+        <result column="spendOrIncome" jdbcType="int" property="spendOrIncome" />
+        <result column="type" jdbcType="int" property="type" />
+        <result column="amount" jdbcType="int" property="amount" />
+        <result column="note" jdbcType="VARCHAR" property="note" />
+    </resultMap>
+
+    <select id="queryOwnMoney" resultType="map">
+        select * from ownMoney where questionId = #{questionId} order by rank
+    </select>
+
+    <insert id="addSpend">
+        insert into answer values
+        <foreach collection ="list" item="map" separator =",">
+            (#{map.answerId}, #{map.questionId},#{map.rank}, #{map.answerContent})
+        </foreach >
+    </insert>
+
+    <insert id="addIncome">
+        insert into answer values
+        <foreach collection ="list" item="map" separator =",">
+            (#{map.answerId}, #{map.questionId},#{map.rank}, #{map.answerContent})
+        </foreach >
+    </insert>
+
+</mapper>
