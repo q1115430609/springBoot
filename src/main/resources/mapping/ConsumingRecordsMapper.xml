@@ -5,7 +5,7 @@
     <resultMap id="BaseResultMap" type="com.example.springboot.entity.ConsumingRecords">
         <result column="id" jdbcType="VARCHAR" property="id" />
         <result column="userId" jdbcType="VARCHAR" property="userId" />
-        <result column="date" jdbcType="Date" property="date" />
+        <result column="date" jdbcType="DATE" property="date" />
         <result column="speOrIncType" jdbcType="VARCHAR" property="speOrIncType" />
         <result column="amount" jdbcType="DOUBLE" property="amount" />
         <result column="note" jdbcType="VARCHAR" property="note" />
