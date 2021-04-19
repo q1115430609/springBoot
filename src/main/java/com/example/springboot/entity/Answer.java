@@ -3,7 +3,7 @@ package com.example.springboot.entity;
 public class Answer {
     public String answerId;
     public String questionId;
-    public int rank;
+    public Integer rank;
     public String answerContent;
 
     public String getAnswerId() {
@@ -30,11 +30,11 @@ public class Answer {
         this.answerContent = answerContent;
     }
 
-    public int getRank() {
+    public Integer getRank() {
         return rank;
     }
 
-    public void setRank(int rank) {
+    public void setRank(Integer rank) {
         this.rank = rank;
     }
 }

@@ -2,7 +2,7 @@ package com.example.springboot.entity;
 
 public class Question {
     public String questionId;
-    public int questionNo;
+    public Integer questionNo;
     public String questionName;
     public String questionCorrectAnswer;
     public String questionAnswerDescribe;
@@ -15,11 +15,11 @@ public class Question {
         this.questionId = questionId;
     }
 
-    public int getQuestionNo() {
+    public Integer getQuestionNo() {
         return questionNo;
     }
 
-    public void setQuestionNo(int questionNo) {
+    public void setQuestionNo(Integer questionNo) {
         this.questionNo = questionNo;
     }
 

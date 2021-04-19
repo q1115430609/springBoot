@@ -2,12 +2,12 @@ package com.example.springboot.entity;
 
 import java.util.Date;
 
-public class OwnMoney {
+public class ConsumingRecords {
     public String id;
     public String userId;
-    public Double total;
-    public Double salary;
-    public Date salaryDate;
+    public Date date;
+    public String speOrIncType;
+    public Double amount;
     public String note;
 
     public String getId() {
@@ -26,28 +26,28 @@ public class OwnMoney {
         this.userId = userId;
     }
 
-    public Double getTotal() {
-        return total;
+    public Date getDate() {
+        return date;
     }
 
-    public void setTotal(Double total) {
-        this.total = total;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public Double getSalary() {
-        return salary;
+    public String getSpeOrIncType() {
+        return speOrIncType;
     }
 
-    public void setSalary(Double salary) {
-        this.salary = salary;
+    public void setSpeOrIncType(String speOrIncType) {
+        this.speOrIncType = speOrIncType;
     }
 
-    public Date getSalaryDate() {
-        return salaryDate;
+    public Double getAmount() {
+        return amount;
     }
 
-    public void setSalaryDate(Date salaryDate) {
-        this.salaryDate = salaryDate;
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
     public String getNote() {

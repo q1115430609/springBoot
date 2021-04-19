@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.springboot.mapper.PiggyBankMapper">
+<mapper namespace="com.example.springboot.mapper.OwnMoneyMapper">
 
-    <resultMap id="BaseResultMap" type="com.example.springboot.entity.PiggyBank">
+    <resultMap id="BaseResultMap" type="com.example.springboot.entity.OwnMoney">
         <result column="id" jdbcType="VARCHAR" property="id" />
         <result column="userId" jdbcType="VARCHAR" property="userId" />
-        <result column="spendOrIncome" jdbcType="int" property="spendOrIncome" />
-        <result column="type" jdbcType="int" property="type" />
-        <result column="amount" jdbcType="int" property="amount" />
+        <result column="total" jdbcType="DOUBLE" property="total" />
+        <result column="salary" jdbcType="DOUBLE" property="salary" />
+        <result column="salaryDate" jdbcType="DATE" property="salaryDate" />
         <result column="note" jdbcType="VARCHAR" property="note" />
     </resultMap>
 

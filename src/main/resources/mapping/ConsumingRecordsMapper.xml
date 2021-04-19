@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.ConsumingRecordsMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.springboot.entity.ConsumingRecords">
+        <result column="id" jdbcType="VARCHAR" property="id" />
+        <result column="userId" jdbcType="VARCHAR" property="userId" />
+        <result column="date" jdbcType="Date" property="date" />
+        <result column="speOrIncType" jdbcType="VARCHAR" property="speOrIncType" />
+        <result column="amount" jdbcType="DOUBLE" property="amount" />
+        <result column="note" jdbcType="VARCHAR" property="note" />
+    </resultMap>
+
+    <select id="getRecords" resultType="com.example.springboot.entity.ConsumingRecords">
+        select * from user where id = #{id}
+    </select>
+
+</mapper>

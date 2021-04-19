@@ -1,6 +1,6 @@
 package com.example.springboot.service.impl;
 
-import com.example.springboot.mapper.PiggyBankMapper;
+import com.example.springboot.mapper.OwnMoneyMapper;
 import com.example.springboot.service.PiggyBankService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,17 +11,15 @@ import java.util.Map;
 public class PiggyBankServiceImpl implements PiggyBankService {
 
     @Autowired
-    PiggyBankMapper piggyBankMapper;
+    OwnMoneyMapper ownMoneyMapper;
 
     @Override
-    public int addSpend(Map<String, Object> map) {
-        int a = piggyBankMapper.addSpend(map);
-        return 0;
+    public void addSpend(Map<String, Object> map) {
+        int a = ownMoneyMapper.addSpend(map);
     }
 
     @Override
-    public int addIncome(Map<String, Object> map){
-        int a = piggyBankMapper.addIncome(map);
-        return 0;
+    public void addIncome(Map<String, Object> map){
+        int a = ownMoneyMapper.addIncome(map);
     }
 }
