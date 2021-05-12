@@ -20,7 +20,7 @@ public class LoginController {
     public String login(@RequestBody HashMap<String,Object> map){
         String id = String.valueOf(map.get("id"));
         User user = loginService.getUserMassage(id);
-        System.out.println(user);
+        System.out.println("user");
         return user.getRealName();
     }
 
