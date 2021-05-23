@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.springboot.mapper.FileStoreMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.springboot.entity.FileStore">
+        <result column="id" jdbcType="VARCHAR" property="id" />
+        <result column="userId" jdbcType="VARCHAR" property="userId" />
+        <result column="path" jdbcType="VARCHAR" property="path" />
+        <result column="fileName" jdbcType="VARCHAR" property="fileName" />
+    </resultMap>
+
+    <insert id="addFileServiceImpl">
+        insert into fileStore(id,userId,fileName,path) values(#{id},#{userId},#{fileName},#{path})
+    </insert>
+
+    <select id="getFileListServiceImpl">
+        select * from fileStore where userId = #{userId}
+    </select>
+</mapper>

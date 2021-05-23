@@ -9,8 +9,11 @@
         <result column="realName" jdbcType="VARCHAR" property="realName" />
     </resultMap>
 
-    <select id="getUser" resultType="com.example.springboot.entity.User">
-        select * from user where id = #{id}
+    <insert id="loginInMapper">
+        insert into user(id,userId,userName,passWord,email,phone,createTime,updateTime) values(#{id},#{userId},#{userName},#{passWord},#{email},#{phone},#{createTime},#{updateTime})
+    </insert>
+    
+    <select id="getUserByUserIdMapper" resultType="com.example.springboot.entity.User">
+        select * from user where userId = #{userId}
     </select>
-
 </mapper>

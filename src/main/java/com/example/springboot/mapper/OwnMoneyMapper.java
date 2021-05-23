@@ -6,6 +6,6 @@ import java.util.Map;
 
 @Mapper
 public interface OwnMoneyMapper {
-    public int addSpend(Map<String,Object> map);
-    public int addIncome(Map<String,Object> map);
+    int addSpend(Map<String,Object> map);
+    int addIncome(Map<String,Object> map);
 }
