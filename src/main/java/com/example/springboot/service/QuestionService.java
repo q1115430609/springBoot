@@ -6,4 +6,5 @@ import java.util.Map;
 public interface QuestionService {
     List<Map<String,Object>> getQuestionList();
     Map<String,Object> addQuestion(Map<String,Object> map);
+    void deleteQuestion(String questionId);
 }

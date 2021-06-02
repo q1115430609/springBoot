@@ -11,7 +11,7 @@
     </resultMap>
 
     <select id="getQuestionList" resultType="map">
-        select * from question
+        select * from question order by questionNo
     </select>
 
     <select id="getQuestionMaxNo" resultType="java.lang.Integer">
@@ -21,4 +21,8 @@
     <insert id="addQuestion">
         insert into question VALUES(#{questionId},#{questionNo},#{questionName},#{questionCorrectAnswer},#{questionAnswerDescribe});
     </insert>
+
+    <delete id="questionIdMapper">
+        delete from question where questionId = #{questionId}
+    </delete>
 </mapper>

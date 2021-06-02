@@ -64,4 +64,8 @@ public class QuestionServiceImpl implements QuestionService{
         return new HashMap<>();
     }
 
+    public void deleteQuestion(String questionId){
+        questionmapper.questionIdMapper(questionId);
+    }
+
 }

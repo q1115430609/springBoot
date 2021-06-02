@@ -8,6 +8,7 @@ import java.util.Map;
 
 @Mapper
 public interface FileStoreMapper {
-    void addFileServiceImpl(@Param("id") String id, @Param("userId") String userId,@Param("fileName") String fileName, @Param("path")String path);
-    List<Map<String,Object>> getFileListServiceImpl(@Param("id") String id);
+    void addFileServiceImpl(Map<String,Object> params);
+    List<Map<String,Object>> getFileListServiceImpl(@Param("userId") String userId);
+    List<Map<String,Object>> getFileByIdServiceImpl(@Param("id") String id);
 }

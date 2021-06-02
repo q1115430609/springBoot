@@ -10,10 +10,14 @@
     </resultMap>
 
     <insert id="addFileServiceImpl">
-        insert into fileStore(id,userId,fileName,path) values(#{id},#{userId},#{fileName},#{path})
+        insert into fileStore(id,userId,fileName,path,createTime,updateTime) values(#{id},#{userId},#{fileName},#{path},#{createTime},#{updateTime})
     </insert>
 
-    <select id="getFileListServiceImpl">
-        select * from fileStore where userId = #{userId}
+    <select id="getFileListServiceImpl" resultType="map">
+        select fs.id,fs.userId,fs.fileName,fs.path,DATE_FORMAT(fs.createTime,'%Y-%m-%d %H:%i:%s') as createTime,u.userName from fileStore fs left join user u on fs.userId = u.userId where fs.userId = #{userId}
+    </select>
+
+    <select id="getFileByIdServiceImpl" resultType="map">
+        select * from fileStore where id = #{id}
     </select>
 </mapper>
